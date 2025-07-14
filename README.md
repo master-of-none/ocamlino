@@ -28,7 +28,7 @@ ocamlino/
 │   ├── test_reverse_list.ml
 │   ├── test_merge_sort.ml
 │   └── dune              # Test stanzas
-├── Dockerfile            # Docker setup for clean OCaml builds
+├── Dockerfile            # Docker setup for clean OCaml builds (Also has CI)
 └── Jenkinsfile           # CI pipeline definition
 ```
 
