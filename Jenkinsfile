@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    docker {
+    dockerContainer {
       image 'ocaml/opam:debian-11'
       args '-u opam'  // run as opam user
     }
