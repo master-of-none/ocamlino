@@ -10,13 +10,7 @@
     - Add a simple CLI menu to choose which module to run
     - Support command-line arguments instead of interactive input *)
 
-open Dsa.Sieve
-
 let () =
-  print_string "Enter max: ";
-  let max = read_int () in
-  let primes = calculate_prime max in
-  for n = 2 to max do
-    if primes.(n) then Printf.printf "%d " n
-  done;
-  print_newline ()
+  print_endline "Run a specific program:";
+  print_endline "  dune exec bin/sieve.exe";
+  print_endline "  dune exec bin/leap_year.exe"
