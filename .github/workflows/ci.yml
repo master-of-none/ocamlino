@@ -1,0 +1,26 @@
+name: OCaml Docker CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build Docker image
+      run: |
+        docker build -t ocamlino .
+
+    - name: Run OCaml build and tests inside container
+      run: |
+        docker run --rm ocamlino bash -c "eval \$(opam env) && dune build @all && dune runtest"

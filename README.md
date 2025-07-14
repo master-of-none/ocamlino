@@ -38,8 +38,9 @@ ocamlino/
 
 - OCaml — functional programming language
 - dune — OCaml's build system
-- Docker — reproducible development environment
-- Jenkins — CI/CD pipeline automation
+- Docker — reproducible development environment (Done)
+- Jenkins — CI/CD pipeline automation (Done)
+- Github CI - Alternate for Jenkins
 
 ---
 

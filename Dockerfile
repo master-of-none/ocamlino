@@ -29,5 +29,3 @@ RUN opam init -y --disable-sandboxing && \
 # Copy project
 COPY --chown=opam:opam . .
 
-# Build and test
-RUN bash -c "eval \"\$(opam env)\" && dune build @all && dune runtest"
