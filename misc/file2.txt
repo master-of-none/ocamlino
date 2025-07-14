@@ -1,0 +1,2 @@
+Hello This is file 1
+It will be copied to another file
