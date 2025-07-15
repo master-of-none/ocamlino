@@ -12,4 +12,3 @@
  (name copy_file_bin)
  (public_name ocamlino.copy_file)
  (libraries ocamlino.dsa))
-
