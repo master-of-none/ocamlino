@@ -1,0 +1,12 @@
+exp-grouping = preserve
+break-separators = before
+dock-collection-brackets = false
+type-decl = sparse
+break-cases = fit-or-vertical
+module-item-spacing = sparse
+break-infix = fit-or-vertical
+# extension-indent = 4
+# function-indent = 4
+# let-binding-indent = 4
+# type-decl-indent = 4
+# cases-exp-indent = 4
