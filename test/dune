@@ -1,3 +1,7 @@
 (test
  (name test_leap_year)
  (libraries ocamlino.dsa alcotest))
+
+(test
+ (name test_radix)
+ (libraries ocamlino.dsa alcotest))
