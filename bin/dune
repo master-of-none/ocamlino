@@ -22,3 +22,8 @@
  (name tac_bin)
  (public_name ocamlino.tac_bin)
  (libraries ocamlino.dsa))
+
+(executable
+(name quad_trees_bin)
+(public_name ocamlino.quad_trees)
+(libraries ocamlino.dsa graphics))
