@@ -25,7 +25,7 @@ WORKDIR /home/opam/ocamlino
 
 # Initialize opam and install packages
 RUN opam init -y --disable-sandboxing && \
-    bash -c "eval \"\$(opam env)\" && opam install -y dune alcotest graphics"
+    bash -c "eval \"\$(opam env)\" && opam install -y dune alcotest graphics stdio base"
 
 # Copy project
 COPY --chown=opam:opam . .
