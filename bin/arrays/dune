@@ -1,0 +1,14 @@
+(executable
+ (name contains_duplicate)
+ (public_name ocamlino.contains_duplicate)
+ (libraries base stdio))
+
+(executable
+(name valid_anagrams)
+(public_name ocamlino.valid_anagrams)
+(libraries base stdio))
+
+(executable
+(name two_sums)
+(public_name ocamlino.two_sums)
+(libraries base stdio))

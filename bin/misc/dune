@@ -27,3 +27,8 @@
 (name quad_trees_bin)
 (public_name ocamlino.quad_trees)
 (libraries ocamlino.dsa graphics))
+
+(executable
+ (name resizeable_array_bin)
+ (public_name ocamlino.resizeable_array)
+ (libraries ocamlino.dsa))

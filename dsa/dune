@@ -2,5 +2,5 @@
  (name dsa)
  (public_name ocamlino.dsa)
  (modules leap_year sieve copy_file tac radix quad_trees)
- (libraries graphics))
+ (libraries graphics arrays))
  
