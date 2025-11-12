@@ -4,11 +4,16 @@
  (libraries base stdio))
 
 (executable
-(name valid_anagrams)
-(public_name ocamlino.valid_anagrams)
-(libraries base stdio))
+ (name valid_anagrams)
+ (public_name ocamlino.valid_anagrams)
+ (libraries base stdio))
 
 (executable
-(name two_sums)
-(public_name ocamlino.two_sums)
-(libraries base stdio))
+ (name two_sums)
+ (public_name ocamlino.two_sums)
+ (libraries base stdio))
+
+(executable
+ (name group_anagrams)
+ (public_name ocamlino.group_anagrams)
+ (libraries base stdio))
