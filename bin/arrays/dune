@@ -1,19 +1,29 @@
 (executable
  (name contains_duplicate)
+ (modules contains_duplicate)
  (public_name ocamlino.contains_duplicate)
  (libraries base stdio))
 
 (executable
  (name valid_anagrams)
+ (modules valid_anagrams)
  (public_name ocamlino.valid_anagrams)
  (libraries base stdio))
 
 (executable
  (name two_sums)
+ (modules two_sums)
  (public_name ocamlino.two_sums)
  (libraries base stdio))
 
 (executable
  (name group_anagrams)
+ (modules group_anagrams)
  (public_name ocamlino.group_anagrams)
  (libraries base stdio))
+
+(executable
+  (name top_k)
+  (modules top_k)
+  (public_name ocamlino.top_k)
+  (libraries base batteries stdio))

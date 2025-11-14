@@ -1,5 +1,5 @@
 (library
  (name arrays)
  (public_name ocamlino.arrays)
- (modules resizable_module)
+ (modules resizable_array)
  (libraries graphics))
