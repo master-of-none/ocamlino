@@ -5,7 +5,7 @@
 #
 # COPY --chown=opam:opam . .
 #
-# RUN opam update && opam install dune 
+# RUN opam update && opam install dune
 # RUN bash -c "eval $(opam env)"
 #
 # RUN bash -c "eval \"\$(opam env)\" && dune build @all && dune runtest"
@@ -25,7 +25,7 @@ WORKDIR /home/opam/ocamlino
 
 # Initialize opam and install packages
 RUN opam init -y --disable-sandboxing && \
-    bash -c "eval \"\$(opam env)\" && opam install -y dune alcotest graphics stdio base"
+    bash -c "eval \"\$(opam env)\" && opam install -y dune alcotest graphics stdio base batteries"
 
 # Copy project
 COPY --chown=opam:opam . .
