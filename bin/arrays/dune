@@ -45,3 +45,9 @@
 (modules valid_sudoku)
 (public_name ocamlino.valid_sudoku)
 (libraries base stdio))
+
+(executable
+(name longest_consec)
+(modules longest_consec)
+(public_name ocamlino.longest_consec)
+(libraries base stdio))
