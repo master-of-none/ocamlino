@@ -1,0 +1,11 @@
+(executable
+ (name valid_palindrome)
+ (modules valid_palindrome)
+ (public_name ocamlino.valid_palindrome)
+ (libraries base stdio))
+
+ (executable
+  (name two_sum_sorted)
+  (modules two_sum_sorted)
+  (public_name ocamlino.two_sum_sorted)
+  (libraries base stdio))
