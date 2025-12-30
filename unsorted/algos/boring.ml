@@ -38,10 +38,10 @@ let rec sum_list = function
   | _ :: xs -> 1 + sum_list xs
 
 (** Both are Tail Recurisve function *)
-let rec sum_list list n =
+let rec sum_list_tail list n =
   match list with
   | [] -> n
-  | _ :: xs -> sum_list xs (n + 1)
+  | _ :: xs -> sum_list_tail xs (n + 1)
 
 let length_of_list list =
   let rec aux acc = function
@@ -56,7 +56,7 @@ let rec last_element = function
   | [ x ] -> Some x
   | _ :: xs -> last_element xs
 
-let rec last_element_reverse list =
+let last_element_reverse list =
   match List.rev list with
   | [] -> None
   | x :: _ -> Some x
