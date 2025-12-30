@@ -1,0 +1,20 @@
+FROM alpine:3.14
+
+# System dependencies
+RUN apk add --no-cache \
+    bash curl git \
+    gmp gmp-dev build-base \
+    ocaml ocaml-compiler-libs opam \
+    libx11 libx11-dev libxft-dev freetype-dev fontconfig-dev
+
+# Create non-root opam user
+RUN adduser -D -u 1000 opam
+USER opam
+WORKDIR /home/opam
+
+# Initialize opam once
+RUN opam init -y --disable-sandboxing
+
+# Install OCaml deps ONCE
+RUN bash -c "eval \"\$(opam env)\" && \
+    opam install -y dune alcotest graphics stdio base batteries"
