@@ -1,0 +1,4 @@
+(library
+ (name boring)
+ (modules boring)
+ (public_name ocamlino.boring))
