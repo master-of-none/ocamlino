@@ -6,6 +6,7 @@ break-cases = toplevel
 module-item-spacing = sparse
 break-infix = fit-or-vertical
 field-space = tight-decl
+if-then-else = k-r
 # extension-indent = 4
 # function-indent = 4
 # let-binding-indent = 4
