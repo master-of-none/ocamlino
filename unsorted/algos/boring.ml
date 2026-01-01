@@ -228,3 +228,81 @@ let rec bubblesort lst =
     lst
   else
     bubblesort next
+
+(** Selection Sort *)
+let listmin = function
+  | [] -> None
+  | x :: xs ->
+      let rec findmin cur = function
+        | [] -> cur
+        | h :: t ->
+            if h < cur then
+              findmin h t
+            else
+              findmin cur t
+      in
+      Some (findmin x xs)
+
+let rec remove_first v = function
+  | [] -> []
+  | x :: xs ->
+      if x = v then
+        xs
+      else
+        x :: remove_first v xs
+
+let rec selection = function
+  | [] -> []
+  | l -> (
+      match listmin l with
+      | None -> []
+      | Some m -> m :: selection (remove_first m l))
+
+(*? Data Types *)
+
+(** Enumeration *)
+type vehicle =
+  | Bike
+  | Motorbike
+  | Car
+  | Lorry
+
+let wheels = function
+  | Bike -> 2
+  | Motorbike -> 2
+  | Car -> 4
+  | Lorry -> 18
+
+type vehicle =
+  | Bike
+  | Motorbike of int
+  | Car of bool
+  | Lorry of int
+
+let wheels = function
+  | Bike -> 2
+  | Motorbike _ -> 2
+  | Car robin ->
+      if robin then
+        3
+      else
+        4
+  | Lorry w -> w
+
+(** Binary Tree *)
+type 'a tree =
+  | Leaf
+  | Br of 'a * 'a tree * 'a tree
+
+let tree =
+  Br (1, Br (2, Br (4, Leaf, Leaf), Br (5, Leaf, Leaf)), Br (3, Leaf, Leaf))
+
+(** Count nodes *)
+let rec count = function
+  | Leaf -> 0
+  | Br (_, t1, t2) -> 1 + count t1 + count t2
+
+(** Depth *)
+let rec depth = function
+  | Leaf -> 0
+  | Br (_, t1, t2) -> 1 + max (depth t1) (depth t2)
