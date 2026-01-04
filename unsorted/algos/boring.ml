@@ -261,7 +261,7 @@ let rec selection = function
 (*? Data Types *)
 
 (** Enumeration *)
-type vehicle =
+(* type vehicle =
   | Bike
   | Motorbike
   | Car
@@ -271,7 +271,7 @@ let wheels = function
   | Bike -> 2
   | Motorbike -> 2
   | Car -> 4
-  | Lorry -> 18
+  | Lorry -> 18 *)
 
 type vehicle =
   | Bike
@@ -306,3 +306,59 @@ let rec count = function
 let rec depth = function
   | Leaf -> 0
   | Br (_, t1, t2) -> 1 + max (depth t1) (depth t2)
+
+(** B Tree Sum *)
+let rec treesum = function
+  | Leaf -> 0
+  | Br (v, t1, t2) -> v + treesum t1 + treesum t2
+
+(** Tree Traversals *)
+let rec preorder = function
+  | Leaf -> []
+  | Br (v, t1, t2) -> [ v ] @ preorder t1 @ preorder t2
+
+let rec inorder = function
+  | Leaf -> []
+  | Br (v, t1, t2) -> inorder t1 @ [ v ] @ inorder t2
+
+let rec postorder = function
+  | Leaf -> []
+  | Br (v, t1, t2) -> postorder t1 @ postorder t2 @ [ v ]
+
+(** Tail Recurisve Trees *)
+let rec preord = function
+  | Leaf, acc -> acc
+  | Br (v, t1, t2), acc -> v :: preord (t1, preord (t2, acc))
+
+let rec inord = function
+  | Leaf, acc -> acc
+  | Br (v, t1, t2), acc -> inord (t1, v :: inord (t2, acc))
+
+let rec postord = function
+  | Leaf, acc -> acc
+  | Br (v, t1, t2), acc -> postord (t1, postord (t2, v :: acc))
+
+(** Queues *)
+type 'a queue = Q of 'a list * 'a list
+
+let norm = function
+  | Q ([], tls) -> Q (List.rev tls, [])
+  | q -> q
+
+let qnull = function
+  | Q ([], []) -> true
+  | _ -> false
+
+let enque (Q (hds, tls)) x = norm (Q (hds, x :: tls))
+
+exception Empty
+
+let deque = function
+  | Q (_ :: hds, tls) -> norm (Q (hds, tls))
+  | _ -> raise Empty
+
+let qempty = Q ([], [])
+
+let qhd = function
+  | Q (x :: _, _) -> x
+  | _ -> raise Empty
