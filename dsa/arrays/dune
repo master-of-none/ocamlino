@@ -1,4 +1,4 @@
 (library
  (name arrays)
  (public_name ocamlino.arrays)
- (modules resizable_array bit_vector))
+ (modules resizable_array bit_vector ropes))
