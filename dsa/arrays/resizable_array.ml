@@ -17,7 +17,8 @@ let set a i v =
   a.data.(i) <- v
 
 let resize a s =
-  if s <= a.size then Array.fill a.data s (a.size - s) a.default
+  if s <= a.size then
+    Array.fill a.data s (a.size - s) a.default
   else begin
     let n = Array.length a.data in
     if s > n then begin
