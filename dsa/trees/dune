@@ -1,0 +1,4 @@
+(library
+ (name trees)
+ (public_name ocamlino.trees)
+ (modules bst))
