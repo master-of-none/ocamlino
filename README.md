@@ -14,59 +14,20 @@ Built with OCaml, `dune`, and automated via Docker and GitHub Actions for CI/CD.
 
 ```
 ocamlino/
-├── dune-project              # Root Dune project file
 ├── bin/                      # Executable problem solutions
-│   ├── arrays/              # Array algorithm problems (10 executables)
-│   │   ├── two_sum.ml
-│   │   ├── contains_duplicate.ml
-│   │   ├── valid_anagram.ml
-│   │   ├── group_anagrams.ml
-│   │   ├── top_k.ml
-│   │   ├── product_of_self.ml
-│   │   ├── valid_sudoku.ml
-│   │   ├── longest_consec.ml
-│   │   ├── encode_and_decode.ml
-│   │   └── dune
+│   ├── arrays/              # Array problems (two-sum, anagrams, sudoku, etc.)
 │   ├── two_pointers/        # Two-pointer technique problems
-│   │   ├── valid_palindrome.ml
-│   │   ├── two_sum_sorted.ml
-│   │   └── dune
 │   └── misc/                # Miscellaneous binaries and utilities
-│       ├── main.ml
-│       ├── boring.ml
-│       └── dune
 ├── dsa/                      # Core DSA library
-│   ├── arrays/              # Array-based data structures
-│   │   ├── bit_vector.ml
-│   │   ├── persistent_array.ml
-│   │   ├── ropes.ml         # In progress
-│   │   ├── resizable_array.ml
-│   │   └── dune
-│   ├── trees/               # Tree data structures
-│   │   ├── bst.ml           # Persistent Binary Search Tree
-│   │   └── dune
-│   ├── radix.ml[i]          # Radix conversion
-│   ├── sieve.ml[i]          # Sieve of Eratosthenes
-│   ├── leap_year.ml         # Leap year checker
-│   ├── copy_file.ml[i]      # File copying utility
-│   ├── tac.ml               # Reverse file contents
-│   ├── quad_trees.ml        # Quad tree visualization
-│   └── dune
+│   ├── arrays/              # Bit vector, persistent array, ropes, resizable array
+│   ├── trees/               # Binary search tree (BST)
+│   └── [algorithms]         # Radix, sieve, leap year, file ops, quad trees
 ├── unsorted/algos/          # Learning algorithms collection
-│   └── boring.ml            # 300+ lines of functional utilities
-├── test/                     # Unit tests
-│   ├── test_radix.ml
-│   ├── test_leap_year.ml
-│   └── dune
-├── Dockerfile               # Docker setup for clean OCaml builds
-├── Dockerfile.base          # Multi-platform base image
+├── test/                     # Unit tests (alcotest)
+├── Dockerfile[.base]        # Docker build environments
 ├── Jenkinsfile              # Jenkins CI pipeline
 ├── .github/workflows/       # GitHub Actions CI
-├── .ocamlformat             # OCaml format configuration (K&R style)
-├── .gitignore               # Git ignore rules
-├── ocamlino.opam            # OPAM package manifest
-├── Makefile                 # Development shortcuts (test, build, clean, watch)
-└── README.md                # Project overview and documentation
+└── Configuration files      # dune-project, .ocamlformat, Makefile, etc.
 ```
 
 ---
