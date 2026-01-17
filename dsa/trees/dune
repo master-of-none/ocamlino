@@ -1,4 +1,4 @@
 (library
  (name trees)
  (public_name ocamlino.trees)
- (modules bst avl))
+ (modules bst avl avl_map))

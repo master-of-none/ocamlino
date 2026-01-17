@@ -80,7 +80,7 @@ module Make (X : Ordered) : PersistentSetAvl with type elt = X.t = struct
     | Node (Empty, _, r, _) -> r
     | Node (l, v, r, _) -> balance (remove_min_ele l) v r
 
-  let rec merge t1 t2 =
+  let merge t1 t2 =
     match (t1, t2) with
     | Empty, t | t, Empty -> t
     | _ -> balance t1 (min_elt t2) (remove_min_ele t2)
