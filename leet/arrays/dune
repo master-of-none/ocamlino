@@ -1,0 +1,14 @@
+(test
+(name contains_duplicate)
+(modules contains_duplicate)
+(libraries alcotest))
+
+(test
+ (name valid_anagram)
+ (modules valid_anagram)
+ (libraries alcotest))
+
+(test
+(name two_sum)
+(modules two_sum)
+(libraries alcotest))
