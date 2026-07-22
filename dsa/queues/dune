@@ -1,0 +1,4 @@
+(library
+ (name queues)
+ (public_name ocamlino.queues)
+ (modules imperative))
