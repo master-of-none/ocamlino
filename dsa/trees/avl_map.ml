@@ -38,21 +38,23 @@ module Make (X : Ordered) : PersistentMap with type key = X.t = struct
   let balance l k v r =
     let hl = height l in
     let hr = height r in
-    if hl > hr + 1 then begin
-      match l with
+    if hl > hr + 1 then
+      begin match l with
       | Node (ll, lk, lv, lr, _) when height ll >= height lr ->
           node ll lk lv (node lr k v r)
       | Node (ll, lk, lv, Node (lrl, lrk, lrv, lrr, _), _) ->
           node (node ll lk lv lrl) lrk lrv (node lrr k v r)
       | _ -> assert false
-    end else if hr > hl + 1 then begin
-      match r with
+    end
+    else if hr > hl + 1 then
+      begin match r with
       | Node (rl, rk, rv, rr, _) when height rr >= height rl ->
           node (node l k v rl) rk rv rr
       | Node (Node (rll, rlk, rlv, rlr, _), rk, rv, rr, _) ->
           node (node l k v rll) rlk rlv (node rlr rk rv rr)
       | _ -> assert false
-    end else
+    end
+    else
       node l k v r
 
   let rec mem x = function

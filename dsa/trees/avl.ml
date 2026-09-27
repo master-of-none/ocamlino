@@ -47,21 +47,23 @@ module Make (X : Ordered) : PersistentSetAvl with type elt = X.t = struct
   let balance l v r =
     let hl = height l in
     let hr = height r in
-    if hl > hr + 1 then begin
-      match l with
+    if hl > hr + 1 then
+      begin match l with
       | Node (ll, lv, lr, _) when height ll >= height lr ->
           node ll lv (node lr v r)
       | Node (ll, lv, Node (lrl, lrv, lrr, _), _) ->
           node (node ll lv lrl) lrv (node lrr v r)
       | _ -> assert false
-    end else if hr > hl + 1 then begin
-      match r with
+    end
+    else if hr > hl + 1 then
+      begin match r with
       | Node (rl, rv, rr, _) when height rr >= height rl ->
           node (node l v rl) rv rr
       | Node (Node (rll, rlv, rlr, _), rv, rr, _) ->
           node (node l v rll) rlv (node rlr rv rr)
       | _ -> assert false
-    end else
+    end
+    else
       node l v r
 
   let rec add x = function

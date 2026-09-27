@@ -21,7 +21,10 @@ let longest_consec_func nums =
   let is_start num = not (Hash_set.mem hashset (num - 1)) in
 
   let rec length num =
-    if Hash_set.mem hashset num then 1 + length (num + 1) else 0
+    if Hash_set.mem hashset num then
+      1 + length (num + 1)
+    else
+      0
   in
 
   nums

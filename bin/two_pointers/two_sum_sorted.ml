@@ -6,9 +6,12 @@ let two_sum_sorted nums target =
 
   while !l < !r && Option.is_none !result do
     let sum = arr.(!l) + arr.(!r) in
-    if sum = target then result := Some (!l, !r)
-    else if sum > target then r := !r - 1
-    else l := !l + 1
+    if sum = target then
+      result := Some (!l, !r)
+    else if sum > target then
+      r := !r - 1
+    else
+      l := !l + 1
   done;
 
   !result

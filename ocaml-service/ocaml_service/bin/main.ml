@@ -1,1 +1,8 @@
-let () = print_endline "Hello from OCaml Service"
+let () =
+  let name =
+    if Array.length Sys.argv > 1 then
+      Sys.argv.(1)
+    else
+      "world"
+  in
+  Printf.printf "Hello %s\n" name

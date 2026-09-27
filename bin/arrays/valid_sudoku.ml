@@ -17,7 +17,8 @@ let valid_sudoku board =
           Hash_set.mem rows.(r) ch
           || Hash_set.mem cols.(c) ch
           || Hash_set.mem squares.(sq) ch
-        then valid := false
+        then
+          valid := false
         else begin
           Hash_set.add rows.(r) ch;
           Hash_set.add cols.(c) ch;

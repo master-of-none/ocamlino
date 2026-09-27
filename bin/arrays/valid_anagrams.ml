@@ -5,7 +5,8 @@ let solve_sort s t =
   List.equal Char.equal (sorted s) (sorted t)
 
 let solve_map s t =
-  if String.length s <> String.length t then false
+  if String.length s <> String.length t then
+    false
   else
     let s_map = Hashtbl.create (module Char) in
     let t_map = Hashtbl.create (module Char) in

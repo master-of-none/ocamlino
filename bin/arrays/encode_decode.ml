@@ -8,11 +8,15 @@ let encode strs =
 let decode s =
   let n = String.length s in
   let rec aux i acc =
-    if i >= n then List.rev acc
+    if i >= n then
+      List.rev acc
     else
       let j =
         let rec find_hash j =
-          if Char.(String.get s j = '#') then j else find_hash (j + 1)
+          if Char.(String.get s j = '#') then
+            j
+          else
+            find_hash (j + 1)
         in
         find_hash i
       in

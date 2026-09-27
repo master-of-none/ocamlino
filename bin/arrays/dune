@@ -23,31 +23,31 @@
  (libraries base stdio))
 
 (executable
-  (name top_k)
-  (modules top_k)
-  (public_name ocamlino.top_k)
-  (libraries base batteries stdio))
+ (name top_k)
+ (modules top_k)
+ (public_name ocamlino.top_k)
+ (libraries base batteries stdio))
 
 (executable
-(name encode_decode)
-(modules encode_decode)
-(public_name ocamlino.encode_decode)
-(libraries base stdio))
+ (name encode_decode)
+ (modules encode_decode)
+ (public_name ocamlino.encode_decode)
+ (libraries base stdio))
 
 (executable
-(name product_self)
-(modules product_self)
-(public_name ocamlino.product_self)
-(libraries base stdio))
+ (name product_self)
+ (modules product_self)
+ (public_name ocamlino.product_self)
+ (libraries base stdio))
 
 (executable
-(name valid_sudoku)
-(modules valid_sudoku)
-(public_name ocamlino.valid_sudoku)
-(libraries base stdio))
+ (name valid_sudoku)
+ (modules valid_sudoku)
+ (public_name ocamlino.valid_sudoku)
+ (libraries base stdio))
 
 (executable
-(name longest_consec)
-(modules longest_consec)
-(public_name ocamlino.longest_consec)
-(libraries base stdio))
+ (name longest_consec)
+ (modules longest_consec)
+ (public_name ocamlino.longest_consec)
+ (libraries base stdio))

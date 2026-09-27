@@ -5,10 +5,12 @@ let solve nums =
   let rec aux = function
     | [] -> false
     | x :: xs ->
-        if Hash_set.mem set x then true
+        if Hash_set.mem set x then
+          true
         else (
           Hash_set.add set x;
-          aux xs)
+          aux xs
+        )
   in
   aux nums
 
